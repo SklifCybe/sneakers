@@ -11,7 +11,7 @@ function App() {
             <Header />
             <div className="content">
                 <div className="content__header">
-                    <h1 className="content__title">Все кроссовки</h1>
+                    <h1>Все кроссовки</h1>
                     <div className="search-block">
                         <img src="/img/search.svg" alt="search" />
                         <input placeholder="Поиск..." />
