@@ -1,29 +1,25 @@
 
-function Drawer() {
+function Drawer({ onClose, onRemove, items = [] }) {
     return (
-        <div style={{ display: 'none' }} className="overlay">
+        <div className="overlay">
             <div className="drawer">
                 <h2>
                     Корзина
-                    <img className="btnRemove" src="/img/btn-remove.svg" alt="remove" />
+                    <img className="btnRemove" src="/img/btn-remove.svg" alt="close" onClick={onClose} />
                 </h2>
-                <div className="drawer__items">
-                    <div className="cartItem">
-                        <div style={{ backgroundImage: 'url(/img/sneakers/1.jpg)' }} className="cartItem__img"></div>
-                        <div className="cartItem__text">
-                            <p>Мужские кроссовки Nike Air Max 270</p>
-                            <b>12 999 р.</b>
-                        </div>
-                        <img className="btnRemove" src="/img/btn-remove.svg" alt="remove" />
-                    </div>
-                    <div className="cartItem">
-                        <div style={{ backgroundImage: 'url(/img/sneakers/2.jpg)' }} className="cartItem__img"></div>
-                        <div className="cartItem__text">
-                            <p>Мужские кроссовки Nike Air Max 270</p>
-                            <b>12 999 р.</b>
-                        </div>
-                        <img className="btnRemove" src="/img/btn-remove.svg" alt="remove" />
-                    </div>
+                <div className="drawerItems">
+                    {items.map((item) => {
+                        return (
+                            <div className="cartItem">
+                                <div style={{ backgroundImage: `url(${item.imageUrl})` }} className="cartItemImg"></div>
+                                <div className="cartItemText">
+                                    <p>{item.title}</p>
+                                    <b>{item.price} р.</b>
+                                </div>
+                                <img onClick={() => onRemove(item)} className="btnRemove" src="/img/btn-remove.svg" alt="remove" />
+                            </div>
+                        )
+                    })}
                 </div>
                 <div className="cartTotalBlock">
                     <ul>

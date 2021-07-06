@@ -53,6 +53,7 @@ header {
 
             img {
                 margin-right: 10px;
+                cursor: pointer;
             }
         }
     }
@@ -60,18 +61,18 @@ header {
 
 .content {
     padding: 40px;
-    
-
-    &__header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 40px;
-        justify-content: space-between;
-    }
 
     .sneakers {
         display: flex;
+        flex-wrap: wrap;
     }    
+}
+
+.contentHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    justify-content: space-between;
 }
 
 .search-block {
@@ -117,12 +118,12 @@ header {
             cursor: pointer;
         }
     }
+}
 
-    &__items {
-        flex: 1;
-        overflow: auto;
-        margin-bottom: 20px;
-    }
+.drawerItems {
+    flex: 1;
+    overflow: auto;
+    margin-bottom: 20px;
 }
 
 .cartItem {
@@ -134,28 +135,28 @@ header {
     overflow: hidden;
     padding: 20px;
     margin-bottom: 20px;
+}
 
-    &__text {
-        margin-right: 20px;
-        flex: 1;
+.cartItemText {
+    margin-right: 20px;
+    flex: 1;
 
-        p {
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-        b {
-            font-size: 14px;
-        }
+    p {
+        margin-bottom: 5px;
+        font-size: 16px;
     }
-
-    &__img {
-        margin-right: 20px;
-        width: 70px;
-        height: 70px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 0 -3px;
+    b {
+        font-size: 14px;
     }
+}
+
+.cartItemImg {
+    margin-right: 20px;
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 -3px;
 }
 
 .cartTotalBlock {
