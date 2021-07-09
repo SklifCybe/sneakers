@@ -36,6 +36,7 @@ header {
 
         img {
             margin-right: 15px;
+            cursor: pointer;
         }
 
         p {
@@ -79,6 +80,15 @@ header {
     border: 1px solid #f3f3f3;
     border-radius: 10px;
     padding: 0 15px;
+    position: relative;
+
+    .clear {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        right: 10px;
+        top: 13px;
+    }
 
     input {
         border: 0;
@@ -224,5 +234,45 @@ header {
 
     &:hover {
         opacity: 1;
+    }
+}
+
+.cartEmpty {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    
+    img {
+        margin-bottom: 20px;
+    }
+
+    p {
+        width: 280px;
+        line-height: 24px;
+        opacity: .6;
+    }
+
+    .greenBtn {
+        width: 245px;
+        margin-top: 20px;
+        position: relative;
+
+        &:hover {
+            img {
+                transform: rotate(180deg) translateX(3px);
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 20px;
+            left: 22px;
+            transform: rotate(180deg);
+            margin-right: 15px;
+            transition: transform .15s ease-in-out;
+        }
     }
 }
