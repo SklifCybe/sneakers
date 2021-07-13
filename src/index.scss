@@ -191,6 +191,10 @@ header {
     .greenBtn {
         position: relative;
 
+        &:disabled {
+            animation: button-loading .8s ease-in-out;
+        }
+
         &:hover {
             img {
                 transform: translateX(5px);
@@ -224,6 +228,11 @@ header {
 
     &:active {
         background: darken(#9dd457, 5%);
+    }
+
+    &:disabled {
+        background: #bebebe;
+        cursor: default;
     }
 }
 
@@ -260,6 +269,8 @@ header {
         margin-top: 20px;
         position: relative;
 
+        
+
         &:hover {
             img {
                 transform: rotate(180deg) translateX(3px);
@@ -274,5 +285,17 @@ header {
             margin-right: 15px;
             transition: transform .15s ease-in-out;
         }
+    }
+}
+
+@keyframes button-loading {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .7;
+    }
+    100% {
+        opacity: 1;
     }
 }

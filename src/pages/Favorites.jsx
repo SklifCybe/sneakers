@@ -1,11 +1,17 @@
+import React from 'react';
+
+import AppContext from '../context';
 import Card from "../components/Card";
 
-function Favorites({ items = [], onAddToFavorite }) {
+function Favorites({ onAddToFavorite }) {
+
+    const {favorites} = React.useContext(AppContext);
+
     return (
         <div className="content">
             <h1 className="contentHeader">Мои закладки</h1>
             <div className="sneakers">
-                {items.map((i) => {
+                {favorites.map((i) => {
                     return (
                         <Card
                             key={i.id}
