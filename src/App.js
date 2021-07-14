@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import Drawer from './components/Drawer';
 import AppContext from './context';
+import Orders from './pages/Orders';
 
 function App() {
     const [items, setItems] = React.useState([]);
@@ -73,9 +74,11 @@ function App() {
     };
 
     return (
-        <AppContext.Provider value={{ items, cartItems, favorites, isItemAdded, setCartOpened, setCartItems }}>
+        <AppContext.Provider value={{
+            items, cartItems, favorites, isItemAdded, setCartOpened, setCartItems, onAddToFavorite, onAddToCart
+        }}>
             <div className="wrapper">
-                {cartOpened && <Drawer items={cartItems} onRemove={(id) => onRemoveItem(id)} onClose={() => setCartOpened(false) } />}
+                {cartOpened && <Drawer items={cartItems} onRemove={(id) => onRemoveItem(id)} onClose={() => setCartOpened(false)} />}
                 <Header onClickCart={() => setCartOpened(true)} />
                 <Route path="/" exact>
                     <Home
@@ -84,14 +87,16 @@ function App() {
                         cartItems={cartItems}
                         onClearInput={onClearInput}
                         onChangeSearchValue={onChangeSearchValue}
-                        onAddToFavorite={onAddToFavorite}
-                        onAddToCart={onAddToCart}
                         isLoading={isLoading}
                     />
                 </Route>
                 <Route path="/favorites" exact>
                     <Favorites
                         onAddToFavorite={onAddToFavorite}
+                    />
+                </Route>
+                <Route path="/orders" exact>
+                    <Orders
                     />
                 </Route>
             </div>
