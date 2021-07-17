@@ -11,7 +11,7 @@ function Home({ items, searchValue, onClearInput, onChangeSearchValue, isLoading
       i.title.toLowerCase().includes(searchValue.toLowerCase()),
     );
 
-    return (isLoading ? [...Array(8)] : filterItems).map((i, index) => {
+    return (isLoading ? [...Array(10)] : filterItems).map((i, index) => {
       return (
         <Card
           key={index}

@@ -24,7 +24,7 @@ function Orders() {
     <div className="content">
       <h1 className="contentHeader">Мои заказы</h1>
       <div className="sneakers">
-        {(isLoading ? [...Array(8)] : orders).map((i, index) => {
+        {(isLoading ? [...Array(10)] : orders).map((i, index) => {
           return (
             <Card
               key={index}
